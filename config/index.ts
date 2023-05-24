@@ -15,11 +15,12 @@ export default () => ({
   db: {
     default: {
       host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT, 10) || 5432,
+      port: parseInt(process.env.DB_PORT, 10) || 8000,
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       name: process.env.DB_NAME,
       db_url: process.env.DATABASE_URL,
+      db_client: process.env.DB_CLIENT,
     },
   },
   rabbitmq: {
