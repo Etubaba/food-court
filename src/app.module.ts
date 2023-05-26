@@ -7,6 +7,7 @@ import { HealthModule } from './health/health.module';
 import { OrderModule } from './modules/order/order.module';
 import { OrderController } from './modules/order/controllers/order.controller';
 import { OrderTypesModule } from './modules/order_types/order_types.module';
+import { RabbitMQService } from './modules/rabbitMQ/service/rabbitmq.service';
 
 @Module({
   imports: [
@@ -19,6 +20,12 @@ import { OrderTypesModule } from './modules/order_types/order_types.module';
     OrderTypesModule,
   ],
   controllers: [AppController, OrderController],
-  providers: [AppService],
+  providers: [AppService, RabbitMQService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly rabbitMQService: RabbitMQService) {}
+
+  async onModuleInit() {
+    await this.rabbitMQService.startListening();
+  }
+}

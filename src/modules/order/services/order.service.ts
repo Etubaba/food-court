@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { Knex } from 'knex';
+import { InjectModel } from 'nest-knexjs';
 
 @Injectable()
 export class OrderService {
-  constructor(private readonly knex: Knex) {}
+  constructor(@InjectModel() private readonly knex: Knex) {}
 
   async findAllWithRelations(): Promise<any[]> {
     const query = `
