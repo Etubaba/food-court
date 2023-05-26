@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CreateOrderTypeDto } from '../dto/create-order_type.dto';
+
 @Injectable()
-export class OrderTypesService {
-  create(createOrderTypeDto: CreateOrderTypeDto) {
+export class CalculatedOrderService {
+  create() {
     return 'This action adds a new orderType';
   }
 

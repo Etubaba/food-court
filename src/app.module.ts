@@ -22,10 +22,4 @@ import { RabbitMQService } from './modules/rabbitMQ/service/rabbitmq.service';
   controllers: [AppController, OrderController],
   providers: [AppService, RabbitMQService],
 })
-export class AppModule {
-  constructor(private readonly rabbitMQService: RabbitMQService) {}
-
-  async onModuleInit() {
-    await this.rabbitMQService.startListening();
-  }
-}
+export class AppModule {}

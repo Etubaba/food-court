@@ -9,7 +9,6 @@ import {
 } from '@nestjs/common';
 import { OrderTypesService } from '../service/order_types.service';
 import { CreateOrderTypeDto } from '../dto/create-order_type.dto';
-import { UpdateOrderTypeDto } from '../dto/update-order_type.dto';
 
 @Controller('order-types')
 export class OrderTypesController {
