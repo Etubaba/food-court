@@ -7,7 +7,7 @@ export default () => ({
       process.env.APP_ENV === 'production' ? 'production' : process.env.APP_ENV,
     port: parseInt(process.env.APP_PORT, 10) || 3000,
     host: 'localhost',
-    name: process.env.APP_NAME || 'SCUD RIDE',
+    name: process.env.APP_NAME || 'Food Cort',
     url: process.env.APP_URL,
     global_url_prefix: process.env.GLOBAL_URL_PREFIX || 'api/v1',
     full_url: `${process.env.APP_URL}/${process.env.GLOBAL_URL_PREFIX}`,
