@@ -10,7 +10,7 @@ import {
 import { CalculatedOrderService } from '../service/calculated_order.service';
 // import { CreateOrderTypeDto } from '../dto/create-order_type.dto';
 
-@Controller('order-types')
+@Controller('calculated orders')
 export class CalculatedOrderController {
   constructor(
     private readonly calculatedOrderService: CalculatedOrderService,
@@ -19,5 +19,10 @@ export class CalculatedOrderController {
   @Get()
   findAll() {
     return this.calculatedOrderService.findAll();
+  }
+
+  @Get('meal')
+  getMostOrderedMeal() {
+    return this.calculatedOrderService.findTopMostOrderedMeal();
   }
 }

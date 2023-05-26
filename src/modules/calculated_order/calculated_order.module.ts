@@ -6,4 +6,4 @@ import { CalculatedOrderController } from './controller/calculated_order.control
   controllers: [CalculatedOrderController],
   providers: [CalculatedOrderService],
 })
-export class OrderTypesModule {}
+export class CalculatedModule {}
